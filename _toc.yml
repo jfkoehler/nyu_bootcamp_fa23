@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: syllabus
+chapters:
+- file: python_fundamentals_one
+- file: python_fundamentals_two
+- file: intro_to_numpy
+- file: intro_to_pandas
+- file: pandas_II
+
