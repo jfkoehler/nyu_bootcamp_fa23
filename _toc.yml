@@ -9,4 +9,5 @@ chapters:
 - file: intro_to_numpy
 - file: intro_to_pandas
 - file: pandas_II
+- file: intro_to_plotting
 
