@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Data Bootcamp &#8212; Stern Data Bootcamp</title>
+    <title>Homework 3: Advanced Pandas and Introductory Plotting &#8212; Stern Data Bootcamp</title>
   
   
   
@@ -61,10 +61,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'syllabus';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework_III';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python Fundamentals 1" href="python_fundamentals_one.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -130,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="syllabus.html">
   
   
   
@@ -149,8 +148,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="syllabus.html">
                     Data Bootcamp
                 </a>
             </li>
@@ -218,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/jfkoehler/nyu_bootcamp_fa23/blob/master/syllabus.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/jfkoehler/nyu_bootcamp_fa23/blob/master/homework_III.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -266,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jfkoehler/nyu_bootcamp_fa23/issues/new?title=Issue%20on%20page%20%2Fsyllabus.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jfkoehler/nyu_bootcamp_fa23/issues/new?title=Issue%20on%20page%20%2Fhomework_III.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -296,7 +295,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/syllabus.ipynb" target="_blank"
+      <li><a href="_sources/homework_III.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Data Bootcamp</h1>
+    <h1>Homework 3: Advanced Pandas and Introductory Plotting</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -388,13 +387,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructor">Instructor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help">Getting help</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-content">Course Content</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables-and-grades">Deliverables and grades</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-work-habits">Recommended work habits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#policies">Policies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-your-own-data">Exploring your own data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#styling-pandas">Styling <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -406,77 +400,167 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="data-bootcamp">
-<h1>Data Bootcamp<a class="headerlink" href="#data-bootcamp" title="Permalink to this heading">#</a></h1>
-<p>Data Bootcamp is about nuts and bolts data analysis. You will learn how to analyze economic and business data and enough about computer programming to work with it efficiently.
-We will use Python, a popular high-level computer language that is widely used in finance, consulting, technology, and other parts of the business world. “High-level” means it is less painful than most (the hard work is being done by the language), but it is a serious language with extensive capabilities.</p>
-<p>“Data analysis” means descriptions that summarize data in ways that are helpful and informative. “Bootcamp” is a reminder that expertise takes work. Don’t worry, it’s worth it. You will be more valuable to current and future employers. And you will be able to do things more effectively than friends who rely on Excel.</p>
-<section id="instructor">
-<h2>Instructor<a class="headerlink" href="#instructor" title="Permalink to this heading">#</a></h2>
-<p>Jacob Koehler</p>
-<ul class="simple">
-<li><p>Email: <a class="reference external" href="mailto:jfk11&#37;&#52;&#48;stern&#46;nyu&#46;edu">jfk11<span>&#64;</span>stern<span>&#46;</span>nyu<span>&#46;</span>edu</a></p></li>
-<li><p>Office Hours: By appointment</p></li>
-</ul>
-</section>
-<section id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">#</a></h2>
-<p>There are no prerequisites. We welcome students with no prior programming experience and have designed the course with them in mind. What you need is the courage to take on a challenge and the patience to fix computer programs that don’t work. That’s a regular occurrence, even for experts.</p>
-</section>
-<section id="getting-help">
-<h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this heading">#</a></h2>
-<p>This course has a strong support system to help you when you run into a problem – and anyone who codes runs into programs runs into problems. We have myself and a teaching fellow.</p>
-<p>You can also ask your classmates for help! You can post questions on our discussion group (on NYU Classes). The teaching fellow and I will monitor the discussion group.</p>
-<p>The bottom line: If you’re stuck, ask for help.</p>
-</section>
-<section id="course-content">
-<h2>Course Content<a class="headerlink" href="#course-content" title="Permalink to this heading">#</a></h2>
-<p>I will continue building out our course book as we go, but in the first half of the course I will also be heavily referencing and taking directly from the text below:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://jfkoehler.github.io/nyu_bootcamp_fa23">Fall 2023 Book</a></p></li>
-<li><p><a class="reference external" href="https://NYU.Data-Bootcamp.com">Original Version of Text</a></p></li>
-</ul>
-<p>All assignments will be distributed and collected using Brightspace, and class recordings will be available there as well.</p>
-</section>
-<section id="deliverables-and-grades">
-<h2>Deliverables and grades<a class="headerlink" href="#deliverables-and-grades" title="Permalink to this heading">#</a></h2>
-<p>This course divides naturally into two parts. The first part is an introduction to those aspects of the Python programming language useful for data analysis. We cover this material with as many applications to real data as we can think of. The second part covers advanced topics and ends with a project of your own. The goal is for you to have a piece of work you can show potential employers to illustrate your quantitative skill set. Both parts include a number of graded deliverables. The idea is to do some work all the time rather than lots of work once in a while.</p>
-<p>Graded work includes:
-Code Practice. There are eight assignments over the course of the semester. They are a great way to develop your skills and come to the following class with questions about what you may not yet understand.
-Midterm Project. Midway through the semester, you will be asked to derive unique insight from a dataset that will be delivered to you and visualize that.</p>
-<p>Final Project. We work our way up to the project one step at a time, starting with idea generation and ending with a professional piece of data collection and analysis that you can share with potential employers. We have found that the quality of final project had a surprisingly low correlation to previous programming experience. A little thought and effort go a long way in creating an interesting project.</p>
-<p>Due dates are posted on the course website.</p>
-<p>Dates are not negotiable. Anything handed in late will get a grade of zero.</p>
-<p>All your work should be clean and professional. Your grade depends on it.</p>
-<p>Final grades will be computed from</p>
-<ul class="simple">
-<li><p>Code practice		35%</p></li>
-<li><p>Midterm project		25%</p></li>
-<li><p>Final Project		35%</p></li>
-<li><p>Participation		5%</p></li>
-</ul>
-<p>Final grades are not subject to any fixed distribution or curve. The number of A grades, for example, will depend only on your performance in the course. If you make a good-faith effort, we expect it to be hard to get less than a B. We are the sole judges of what constitutes good-faith effort.</p>
-</section>
-<section id="recommended-work-habits">
-<h2>Recommended work habits<a class="headerlink" href="#recommended-work-habits" title="Permalink to this heading">#</a></h2>
-<p>Python is not something you can learn from reading a book and attending lectures. You need to write programs – the more the better – to understand how they work. Think about how you’d learn to play basketball or soccer; reading and listening to lectures aren’t enough, you need to do it. We’ll do a lot of programming in class, but it’s essential that you follow up outside of class.
-Here’s how.</p>
-<p>Write &amp; Review. After each topic, we recommend you:</p>
-<ul class="simple">
-<li><p>Write: Shortly after class, write down everything you remember without looking at your notes or the book. Note things you don’t understand.</p></li>
-<li><p>Review: Read the relevant section of the book. Fill in the gaps. Ask for help with anything you still don’t understand.</p></li>
-<li><p>Practice. For the first half of the term, each topic has an assignment that covers the same material. We suggest you do them, even the ones that aren’t graded.</p></li>
-</ul>
-<p>We also recommend you practice coding whenever you have the chance. Start small. Write short programs to do anything that crosses your mind. Use Python to do things you would ordinarily do in Excel. Try doing assignments from other courses in Python. At first this will be more work than doing it by hand or in Excel, but once you have some experience it will typically be easier in Python. Even if that’s not the case, the practice will expand your skill set.</p>
-</section>
-<section id="policies">
-<h2>Policies<a class="headerlink" href="#policies" title="Permalink to this heading">#</a></h2>
-<p>Ethics, disabilities, and many other things are governed by NYU and Stern policies. If you have questions about them, please ask.
-On graded work: You may discuss assignments with anyone (in fact, we encourage it), but anything you submit, including your code, should be your own. Exams should be entirely your own work.
-On disabilities: If you have a qualified disability that requires academic accommodation, please contact the Moses Center for Students with Disabilities (CSD, 212-998-4980) and ask them to send us a letter verifying your registration and outlining the accommodation they recommend. If you need to take an exam at the CSD, you must submit a completed Exam Accommodations Form to them at least one week prior to the scheduled exam time to be assured accommodation.</p>
-</section>
-<div class="toctree-wrapper compound">
+  <section id="homework-3-advanced-pandas-and-introductory-plotting">
+<h1>Homework 3: Advanced Pandas and Introductory Plotting<a class="headerlink" href="#homework-3-advanced-pandas-and-introductory-plotting" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Problem 1</strong>: Loading a data file.</p>
+<p>Below, load in the data from the <code class="docutils literal notranslate"><span class="pre">spotify.csv</span></code> file.  Assign it to a variable <code class="docutils literal notranslate"><span class="pre">spotify</span></code> below.</p>
+<p><strong>Problem 2</strong>: Who is the most frequently occurring artist in the data?</p>
+<p><strong>Problem 3</strong>: Create a histogram for the <code class="docutils literal notranslate"><span class="pre">tempo</span></code> column.</p>
+<p><strong>Problem 4</strong>: Create a scatterplot of <code class="docutils literal notranslate"><span class="pre">tempo</span></code> vs. <code class="docutils literal notranslate"><span class="pre">danceability</span></code>.  Do these features seem related?</p>
+<p><strong>Problem 5</strong>: Load in the <code class="docutils literal notranslate"><span class="pre">cell_phone_churn.csv</span></code> data and assign as <code class="docutils literal notranslate"><span class="pre">churn</span></code> below.</p>
+<p>This dataset contains customer information from a telecommunications company about customer churn.  A customer is <em>churned</em> if they leave the provider.</p>
+<p><strong>Problem 6</strong>: What percentage of customers were churned?</p>
+<p><strong>Problem 7</strong>: How do customers who has a voicemail plan and those who did not compare in terms of percent churned?</p>
+<p><strong>Problem 8</strong>: Draw a barplot to represent the number of customers by the number of customer service calls these customers made.</p>
+<p><strong>Problem 9</strong>: Draw boxplots for international minutes by customers who were churned and those that were not.  Are there any differences between these groups?</p>
+<p><strong>Income by College Major</strong></p>
+<p>Below, a dataset from Nate Silver’s 538 blog is shown on college majors and income. <a class="reference external" href="https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/">link</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url1</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/fivethirtyeight/data/master/&#39;</span>
+<span class="n">url2</span> <span class="o">=</span> <span class="s1">&#39;college-majors/recent-grads.csv&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url1</span> <span class="o">+</span> <span class="n">url2</span>
+<span class="n">df538</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">df538</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Problem 10</strong>: Assign the columns of the data as a list below.</p>
+<p><strong>Problem 11</strong>: Set the index of <code class="docutils literal notranslate"><span class="pre">df538</span></code> as <code class="docutils literal notranslate"><span class="pre">Major</span></code>.</p>
+<p><strong>Problem 12</strong>: Create a horizontal bar chart of the median salary by major.</p>
+<p><strong>Problem 13</strong>: Load in the <code class="docutils literal notranslate"><span class="pre">gapminder.csv</span></code> file and assign as <code class="docutils literal notranslate"><span class="pre">gapminder_df</span></code> below.  This data comes from the Gapminder organization and contains information on countries GDP and Life Expectancy.</p>
+<p><strong>Problem 14</strong>: What is the average GDP for each continent?</p>
+<p><strong>Problem 15</strong>: Create a scatter plot for GDP vs. Life Expectancy for the data from 2002.  Include a title and x and y labels.</p>
+<section id="exploring-your-own-data">
+<h2>Exploring your own data<a class="headerlink" href="#exploring-your-own-data" title="Permalink to this heading">#</a></h2>
+<p>Now, head over to the website <code class="docutils literal notranslate"><span class="pre">kaggle.com</span></code> and locate a dataset of interest to you from the <a class="reference external" href="https://www.kaggle.com/datasets?fileType=csv">datasets</a>.  Download a dataset and load it in to your notebook below. Be careful that you don’t select a dataset that is too large (&gt;10 GB), and don’t spend too much time trying to find the perfect dataset.</p>
+<p>The goal here is to use our techniques from <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to explore the data.  Once you have the data loaded, you are to use summaries and plots to explore the data.  Create three plots of your data that contain important insights.  Be sure to label your axes and add appropriate titles to these plots.</p>
+</section>
+<section id="styling-pandas">
+<h2>Styling <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#styling-pandas" title="Permalink to this heading">#</a></h2>
+<p>Chris Moffit has a nice blog about practical uses of Python in a business setting.  In one article, he discusses many more approaches to formatting and styling of DataFrame’s. Head over to the article <a class="reference external" href="https://pbpython.com/styling-pandas.html">here</a> and read it completely.  Use his tips on adding <code class="docutils literal notranslate"><span class="pre">sparklines</span></code> to install the <code class="docutils literal notranslate"><span class="pre">sparklines</span></code> library and demonstrate its use on the titanic dataset from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> below.</p>
+<p>Also, select one other tip for styling that you enjoy.  Create a markdown cell and write a brief summary of the technique, followed by a demonstration using the <code class="docutils literal notranslate"><span class="pre">titanic</span></code> DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version &gt;=1.16.5 and &lt;1.23.0 is required for this version of SciPy (detected version 1.23.3
+  warnings.warn(f&quot;A NumPy version &gt;={np_minversion} and &lt;{np_maxversion}&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;titanic&#39;</span><span class="p">)</span>
+<span class="n">titanic</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>survived</th>
+      <th>pclass</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>sibsp</th>
+      <th>parch</th>
+      <th>fare</th>
+      <th>embarked</th>
+      <th>class</th>
+      <th>who</th>
+      <th>adult_male</th>
+      <th>deck</th>
+      <th>embark_town</th>
+      <th>alive</th>
+      <th>alone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>7.2500</td>
+      <td>S</td>
+      <td>Third</td>
+      <td>man</td>
+      <td>True</td>
+      <td>NaN</td>
+      <td>Southampton</td>
+      <td>no</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>71.2833</td>
+      <td>C</td>
+      <td>First</td>
+      <td>woman</td>
+      <td>False</td>
+      <td>C</td>
+      <td>Cherbourg</td>
+      <td>yes</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -510,15 +594,6 @@ On disabilities: If you have a qualified disability that requires academic accom
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="right-next"
-       href="python_fundamentals_one.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python Fundamentals 1</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -537,13 +612,8 @@ On disabilities: If you have a qualified disability that requires academic accom
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructor">Instructor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help">Getting help</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-content">Course Content</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables-and-grades">Deliverables and grades</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-work-habits">Recommended work habits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#policies">Policies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-your-own-data">Exploring your own data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#styling-pandas">Styling <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
 </ul>
   </nav></div>
 
