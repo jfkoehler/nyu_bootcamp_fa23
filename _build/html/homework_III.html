@@ -411,18 +411,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Problem 1</strong>: Loading a data file.</p>
 <p>Below, load in the data from the <code class="docutils literal notranslate"><span class="pre">spotify.csv</span></code> file.  Assign it to a variable <code class="docutils literal notranslate"><span class="pre">spotify</span></code> below.</p>
@@ -447,6 +435,101 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rank</th>
+      <th>Major_code</th>
+      <th>Major</th>
+      <th>Total</th>
+      <th>Men</th>
+      <th>Women</th>
+      <th>Major_category</th>
+      <th>ShareWomen</th>
+      <th>Sample_size</th>
+      <th>Employed</th>
+      <th>...</th>
+      <th>Part_time</th>
+      <th>Full_time_year_round</th>
+      <th>Unemployed</th>
+      <th>Unemployment_rate</th>
+      <th>Median</th>
+      <th>P25th</th>
+      <th>P75th</th>
+      <th>College_jobs</th>
+      <th>Non_college_jobs</th>
+      <th>Low_wage_jobs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2419</td>
+      <td>PETROLEUM ENGINEERING</td>
+      <td>2339.0</td>
+      <td>2057.0</td>
+      <td>282.0</td>
+      <td>Engineering</td>
+      <td>0.120564</td>
+      <td>36</td>
+      <td>1976</td>
+      <td>...</td>
+      <td>270</td>
+      <td>1207</td>
+      <td>37</td>
+      <td>0.018381</td>
+      <td>110000</td>
+      <td>95000</td>
+      <td>125000</td>
+      <td>1534</td>
+      <td>364</td>
+      <td>193</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2416</td>
+      <td>MINING AND MINERAL ENGINEERING</td>
+      <td>756.0</td>
+      <td>679.0</td>
+      <td>77.0</td>
+      <td>Engineering</td>
+      <td>0.101852</td>
+      <td>7</td>
+      <td>640</td>
+      <td>...</td>
+      <td>170</td>
+      <td>388</td>
+      <td>85</td>
+      <td>0.117241</td>
+      <td>75000</td>
+      <td>55000</td>
+      <td>90000</td>
+      <td>350</td>
+      <td>257</td>
+      <td>50</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 21 columns</p>
+</div></div></div>
 </div>
 <p><strong>Problem 10</strong>: Assign the columns of the data as a list below.</p>
 <p><strong>Problem 11</strong>: Set the index of <code class="docutils literal notranslate"><span class="pre">df538</span></code> as <code class="docutils literal notranslate"><span class="pre">Major</span></code>.</p>
@@ -466,12 +549,6 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version &gt;=1.16.5 and &lt;1.23.0 is required for this version of SciPy (detected version 1.23.3
-  warnings.warn(f&quot;A NumPy version &gt;={np_minversion} and &lt;{np_maxversion}&quot;
 </pre></div>
 </div>
 </div>
