@@ -64,6 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'plotting_seaborn';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Accessing Data with API’s" href="data_apis.html" />
     <link rel="prev" title="datetime, and matplotlib intro" href="intro_to_plotting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -163,6 +164,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="pandas_II.html">Reading Files and Split Apply Combine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro_to_plotting.html"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">More plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="data_apis.html">Accessing Data with API’s</a></li>
+
 
 </ul>
 
@@ -456,6 +460,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">appl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/AAPL.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### add a plot to each axis</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -465,18 +476,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">appl</span><span class="p">[</span><span class="s1">&#39;Adj Close&#39;</span><span class="p">]);</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;A Line&#39;</span><span class="p">);</span>
-
-<span class="ne">NameError</span>: name &#39;appl&#39; is not defined
-</pre></div>
-</div>
-<img alt="_images/5542a90ac0c1fa24cc1c48a6e934787237af0c5c8110d5bd36bb6b20bdca7dcb.png" src="_images/5542a90ac0c1fa24cc1c48a6e934787237af0c5c8110d5bd36bb6b20bdca7dcb.png" />
+<img alt="_images/9956018580fe998eb7ecb623c00a3c087c2908bf1cd905051ce75549e26f3971.png" src="_images/9956018580fe998eb7ecb623c00a3c087c2908bf1cd905051ce75549e26f3971.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -485,15 +485,33 @@ document.write(`
 <span class="c1">### add histogram to bottom right plot</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1">#bottom right?</span>
-<span class="n">d</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aapl</span><span class="p">[</span><span class="s1">&#39;Adj Close&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">#bottom right?</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aapl</span><span class="p">[</span><span class="s1">&#39;Adj Close&#39;</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;aapl&#39; is not defined
+</pre></div>
+</div>
+<img alt="_images/a1b50e41b623cc5190541ad0e6836a24ccb2b6aba29d0c66a4453a4dcfc2ea15.png" src="_images/a1b50e41b623cc5190541ad0e6836a24ccb2b6aba29d0c66a4453a4dcfc2ea15.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### titles and labels</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histogram of Adjusted Close&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Histogram of Adjusted Close&#39;)
 </pre></div>
 </div>
 </div>
@@ -524,6 +542,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/d71d3c7ce9bd45849ce1a875139acbbf260f7c6f72cc2937d4b9421988b3e3c0.png" src="_images/d71d3c7ce9bd45849ce1a875139acbbf260f7c6f72cc2937d4b9421988b3e3c0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -534,6 +555,9 @@ document.write(`
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Basic polar coordinate plot&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/156a749a9967b95275f9f256f4a1818cc8ab29d4fffb2f02adcb8f68c9a229e6.png" src="_images/156a749a9967b95275f9f256f4a1818cc8ab29d4fffb2f02adcb8f68c9a229e6.png" />
 </div>
 </div>
 </section>
@@ -574,6 +598,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/e0fc65215467500a5f7257ce811c2b8b4dae256247e0cdee5dee6eb99aff8098.png" src="_images/e0fc65215467500a5f7257ce811c2b8b4dae256247e0cdee5dee6eb99aff8098.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -595,6 +622,9 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/35b706131a79c2b3fc39b6f8e88ef2af288c403087d38b332062b91a576221da.png" src="_images/35b706131a79c2b3fc39b6f8e88ef2af288c403087d38b332062b91a576221da.png" />
 </div>
 </div>
 <section id="problems">
@@ -622,6 +652,100 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MedInc</th>
+      <th>HouseAge</th>
+      <th>AveRooms</th>
+      <th>AveBedrms</th>
+      <th>Population</th>
+      <th>AveOccup</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>MedHouseVal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>8.3252</td>
+      <td>41.0</td>
+      <td>6.984127</td>
+      <td>1.023810</td>
+      <td>322.0</td>
+      <td>2.555556</td>
+      <td>37.88</td>
+      <td>-122.23</td>
+      <td>4.526</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8.3014</td>
+      <td>21.0</td>
+      <td>6.238137</td>
+      <td>0.971880</td>
+      <td>2401.0</td>
+      <td>2.109842</td>
+      <td>37.86</td>
+      <td>-122.22</td>
+      <td>3.585</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7.2574</td>
+      <td>52.0</td>
+      <td>8.288136</td>
+      <td>1.073446</td>
+      <td>496.0</td>
+      <td>2.802260</td>
+      <td>37.85</td>
+      <td>-122.24</td>
+      <td>3.521</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5.6431</td>
+      <td>52.0</td>
+      <td>5.817352</td>
+      <td>1.073059</td>
+      <td>558.0</td>
+      <td>2.547945</td>
+      <td>37.85</td>
+      <td>-122.25</td>
+      <td>3.413</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3.8462</td>
+      <td>52.0</td>
+      <td>6.281853</td>
+      <td>1.081081</td>
+      <td>565.0</td>
+      <td>2.181467</td>
+      <td>37.85</td>
+      <td>-122.25</td>
+      <td>3.422</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Use the documentation of the <code class="docutils literal notranslate"><span class="pre">fill_between</span></code> function to demonstrate its use by creating a line plot of the <code class="docutils literal notranslate"><span class="pre">dow</span></code> data filled underneath.  What does the <code class="docutils literal notranslate"><span class="pre">hatch</span></code> argument control?</p></li>
@@ -633,6 +757,58 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1914-12-01</td>
+      <td>55.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1915-01-01</td>
+      <td>56.55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1915-02-01</td>
+      <td>56.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1915-03-01</td>
+      <td>58.30</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1915-04-01</td>
+      <td>66.45</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -664,6 +840,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/1b12e6371adc97dec4cec7c39363837897ce3c7decbf7507e0dcd37a1d932ca8.png" src="_images/1b12e6371adc97dec4cec7c39363837897ce3c7decbf7507e0dcd37a1d932ca8.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -671,6 +850,12 @@ document.write(`
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">tips</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;day&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;tip&#39;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;smoker&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;day&#39;, ylabel=&#39;tip&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/4489320ddc303ddbc7874d8ad581adfbdc64001e72b86ad93da20206b3738450.png" src="_images/4489320ddc303ddbc7874d8ad581adfbdc64001e72b86ad93da20206b3738450.png" />
 </div>
 </div>
 </section>
@@ -684,6 +869,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa488982f40&gt;
+</pre></div>
+</div>
+<img alt="_images/25e075aeca2fad339dc8f1de6eff1b2de24a7d5c5223b6188e2d650c92b562a2.png" src="_images/25e075aeca2fad339dc8f1de6eff1b2de24a7d5c5223b6188e2d650c92b562a2.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -691,6 +882,12 @@ document.write(`
 <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">tips</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;tip&#39;</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;kde&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa486ac1190&gt;
+</pre></div>
+</div>
+<img alt="_images/e4c0af5172864f72180bc110a92c86969d4976d37327a8fcfd864344cc2e85ea.png" src="_images/e4c0af5172864f72180bc110a92c86969d4976d37327a8fcfd864344cc2e85ea.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -700,6 +897,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa4884ace20&gt;
+</pre></div>
+</div>
+<img alt="_images/f6feff9076557d14916664cfc07e8c4e0568b6ee324a26b27780a95e192c21b0.png" src="_images/f6feff9076557d14916664cfc07e8c4e0568b6ee324a26b27780a95e192c21b0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -707,6 +910,12 @@ document.write(`
 <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">tips</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;tip&#39;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;smoker&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa486b8ddc0&gt;
+</pre></div>
+</div>
+<img alt="_images/5a7c3c16b0d946db518697d39d1f2dd2a31209841ef6f77a5c6b34a83e032f6f.png" src="_images/5a7c3c16b0d946db518697d39d1f2dd2a31209841ef6f77a5c6b34a83e032f6f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -720,6 +929,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/efe3b03879e5a005d6ba45045f223ae9e6de481ba743f01d5558bbda52ba3673.png" src="_images/efe3b03879e5a005d6ba45045f223ae9e6de481ba743f01d5558bbda52ba3673.png" />
+</div>
 </div>
 </section>
 <section id="relplot">
@@ -732,6 +944,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa4893080d0&gt;
+</pre></div>
+</div>
+<img alt="_images/3ad85b2b13b5891eef785c490208b960846bd3df9586000562f987ad391d9aaa.png" src="_images/3ad85b2b13b5891eef785c490208b960846bd3df9586000562f987ad391d9aaa.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -739,6 +957,12 @@ document.write(`
 <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">tips</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span><span class="s1">&#39;total_bill&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;tip&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/2211dbaf5c44d02a64ea0491ae421c7144c8e594f3ec934ec9cbe948964a07b8.png" src="_images/2211dbaf5c44d02a64ea0491ae421c7144c8e594f3ec934ec9cbe948964a07b8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -748,6 +972,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;smoker&#39;, ylabel=&#39;tip&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/c82461709f983aed033b0ebd55d5687016ae0ddab369abe1bd0b11904a009acc.png" src="_images/c82461709f983aed033b0ebd55d5687016ae0ddab369abe1bd0b11904a009acc.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -756,6 +986,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;smoker&#39;, ylabel=&#39;tip&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/f41032bc33229724104cbcedacf4425b9d6fe71e28f4ad7fb5f08e6e8fcd1ff7.png" src="_images/f41032bc33229724104cbcedacf4425b9d6fe71e28f4ad7fb5f08e6e8fcd1ff7.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -763,6 +999,9 @@ document.write(`
 <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">tips</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;smoker&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a15d02e04117ef4b3093add1806711278165c019453e66a6b8ad59ff32a08350.png" src="_images/a15d02e04117ef4b3093add1806711278165c019453e66a6b8ad59ff32a08350.png" />
 </div>
 </div>
 <ol class="arabic simple">
@@ -802,6 +1041,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fa488e114c0&gt;
+</pre></div>
+</div>
+<img alt="_images/3ceb41040dd70189f5c0e1cd01ee9016b2eb82fd138d8083ed89011d10fd9e98.png" src="_images/3ceb41040dd70189f5c0e1cd01ee9016b2eb82fd138d8083ed89011d10fd9e98.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -810,6 +1055,100 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MedInc</th>
+      <th>HouseAge</th>
+      <th>AveRooms</th>
+      <th>AveBedrms</th>
+      <th>Population</th>
+      <th>AveOccup</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>MedHouseVal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>8.3252</td>
+      <td>41.0</td>
+      <td>6.984127</td>
+      <td>1.023810</td>
+      <td>322.0</td>
+      <td>2.555556</td>
+      <td>37.88</td>
+      <td>-122.23</td>
+      <td>4.526</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8.3014</td>
+      <td>21.0</td>
+      <td>6.238137</td>
+      <td>0.971880</td>
+      <td>2401.0</td>
+      <td>2.109842</td>
+      <td>37.86</td>
+      <td>-122.22</td>
+      <td>3.585</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7.2574</td>
+      <td>52.0</td>
+      <td>8.288136</td>
+      <td>1.073446</td>
+      <td>496.0</td>
+      <td>2.802260</td>
+      <td>37.85</td>
+      <td>-122.24</td>
+      <td>3.521</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5.6431</td>
+      <td>52.0</td>
+      <td>5.817352</td>
+      <td>1.073059</td>
+      <td>558.0</td>
+      <td>2.547945</td>
+      <td>37.85</td>
+      <td>-122.25</td>
+      <td>3.413</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3.8462</td>
+      <td>52.0</td>
+      <td>6.281853</td>
+      <td>1.081081</td>
+      <td>565.0</td>
+      <td>2.181467</td>
+      <td>37.85</td>
+      <td>-122.25</td>
+      <td>3.422</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -818,6 +1157,148 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MedInc</th>
+      <th>HouseAge</th>
+      <th>AveRooms</th>
+      <th>AveBedrms</th>
+      <th>Population</th>
+      <th>AveOccup</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>MedHouseVal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>MedInc</th>
+      <td>1.000000</td>
+      <td>-0.119034</td>
+      <td>0.326895</td>
+      <td>-0.062040</td>
+      <td>0.004834</td>
+      <td>0.018766</td>
+      <td>-0.079809</td>
+      <td>-0.015176</td>
+      <td>0.688075</td>
+    </tr>
+    <tr>
+      <th>HouseAge</th>
+      <td>-0.119034</td>
+      <td>1.000000</td>
+      <td>-0.153277</td>
+      <td>-0.077747</td>
+      <td>-0.296244</td>
+      <td>0.013191</td>
+      <td>0.011173</td>
+      <td>-0.108197</td>
+      <td>0.105623</td>
+    </tr>
+    <tr>
+      <th>AveRooms</th>
+      <td>0.326895</td>
+      <td>-0.153277</td>
+      <td>1.000000</td>
+      <td>0.847621</td>
+      <td>-0.072213</td>
+      <td>-0.004852</td>
+      <td>0.106389</td>
+      <td>-0.027540</td>
+      <td>0.151948</td>
+    </tr>
+    <tr>
+      <th>AveBedrms</th>
+      <td>-0.062040</td>
+      <td>-0.077747</td>
+      <td>0.847621</td>
+      <td>1.000000</td>
+      <td>-0.066197</td>
+      <td>-0.006181</td>
+      <td>0.069721</td>
+      <td>0.013344</td>
+      <td>-0.046701</td>
+    </tr>
+    <tr>
+      <th>Population</th>
+      <td>0.004834</td>
+      <td>-0.296244</td>
+      <td>-0.072213</td>
+      <td>-0.066197</td>
+      <td>1.000000</td>
+      <td>0.069863</td>
+      <td>-0.108785</td>
+      <td>0.099773</td>
+      <td>-0.024650</td>
+    </tr>
+    <tr>
+      <th>AveOccup</th>
+      <td>0.018766</td>
+      <td>0.013191</td>
+      <td>-0.004852</td>
+      <td>-0.006181</td>
+      <td>0.069863</td>
+      <td>1.000000</td>
+      <td>0.002366</td>
+      <td>0.002476</td>
+      <td>-0.023737</td>
+    </tr>
+    <tr>
+      <th>Latitude</th>
+      <td>-0.079809</td>
+      <td>0.011173</td>
+      <td>0.106389</td>
+      <td>0.069721</td>
+      <td>-0.108785</td>
+      <td>0.002366</td>
+      <td>1.000000</td>
+      <td>-0.924664</td>
+      <td>-0.144160</td>
+    </tr>
+    <tr>
+      <th>Longitude</th>
+      <td>-0.015176</td>
+      <td>-0.108197</td>
+      <td>-0.027540</td>
+      <td>0.013344</td>
+      <td>0.099773</td>
+      <td>0.002476</td>
+      <td>-0.924664</td>
+      <td>1.000000</td>
+      <td>-0.045967</td>
+    </tr>
+    <tr>
+      <th>MedHouseVal</th>
+      <td>0.688075</td>
+      <td>0.105623</td>
+      <td>0.151948</td>
+      <td>-0.046701</td>
+      <td>-0.024650</td>
+      <td>-0.023737</td>
+      <td>-0.144160</td>
+      <td>-0.045967</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -825,6 +1306,12 @@ document.write(`
 <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">housing</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">annot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: &gt;
+</pre></div>
+</div>
+<img alt="_images/93114d2bee4f4931aeb0d318be1f7e5606242349da560eed0f31a40f3b576496.png" src="_images/93114d2bee4f4931aeb0d318be1f7e5606242349da560eed0f31a40f3b576496.png" />
 </div>
 </div>
 </section>
@@ -851,6 +1338,100 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>preg</th>
+      <th>plas</th>
+      <th>pres</th>
+      <th>skin</th>
+      <th>insu</th>
+      <th>mass</th>
+      <th>pedi</th>
+      <th>age</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6.0</td>
+      <td>148.0</td>
+      <td>72.0</td>
+      <td>35.0</td>
+      <td>0.0</td>
+      <td>33.6</td>
+      <td>0.627</td>
+      <td>50.0</td>
+      <td>tested_positive</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>85.0</td>
+      <td>66.0</td>
+      <td>29.0</td>
+      <td>0.0</td>
+      <td>26.6</td>
+      <td>0.351</td>
+      <td>31.0</td>
+      <td>tested_negative</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8.0</td>
+      <td>183.0</td>
+      <td>64.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>23.3</td>
+      <td>0.672</td>
+      <td>32.0</td>
+      <td>tested_positive</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>89.0</td>
+      <td>66.0</td>
+      <td>23.0</td>
+      <td>94.0</td>
+      <td>28.1</td>
+      <td>0.167</td>
+      <td>21.0</td>
+      <td>tested_negative</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0</td>
+      <td>137.0</td>
+      <td>40.0</td>
+      <td>35.0</td>
+      <td>168.0</td>
+      <td>43.1</td>
+      <td>2.288</td>
+      <td>33.0</td>
+      <td>tested_positive</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <ol class="arabic simple">
 <li><p>Distribution of ages separated by class.</p></li>
@@ -924,6 +1505,15 @@ document.write(`
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="data_apis.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Accessing Data with API’s</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
