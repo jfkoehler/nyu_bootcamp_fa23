@@ -402,6 +402,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alpha-vantage">ALPHA VANTAGE</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-endpoints">Different Endpoints</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-wrappers">API Wrappers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-api">Finding an api</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 </li>
@@ -457,7 +458,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#read in the data</span>
-<span class="n">sales</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/salesdaily.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sales</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jfkoehler/nyu_bootcamp_fa23/main/data/salesdaily.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">sales</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -646,7 +647,7 @@ memory usage: 213.9+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_58954/1033225833.py:2: FutureWarning: The provided callable &lt;function median at 0x10dbd3ba0&gt; is currently using SeriesGroupBy.median. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass &#39;median&#39; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_59931/1033225833.py:2: FutureWarning: The provided callable &lt;function median at 0x10b8afb00&gt; is currently using SeriesGroupBy.median. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass &#39;median&#39; instead.
   sales.groupby(&#39;Weekday Name&#39;)[[&#39;M01AB&#39;]].agg([&#39;mean&#39;, &#39;std&#39;, &#39;median&#39;, np.median])
 </pre></div>
 </div>
@@ -971,6 +972,21 @@ memory usage: 944.0 bytes
 </div>
 </div>
 </div>
+<p>Head over to the website <a class="reference external" href="https://longdogechallenge.com/">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#getting that information using requests</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#results</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Response</strong></p>
 <ul class="simple">
 <li><p>Random Cat: <a class="reference external" href="https://api.thecatapi.com/v1/images/search">https://api.thecatapi.com/v1/images/search</a></p></li>
@@ -1087,6 +1103,10 @@ memory usage: 944.0 bytes
 </ul>
 <p>Let’s head over, install the library, and retrieve some intraday returns.</p>
 </section>
+<section id="finding-an-api">
+<h3>Finding an api<a class="headerlink" href="#finding-an-api" title="Permalink to this heading">#</a></h3>
+<p>There are many different options for API’s, and many free examples some which require an API and some that do not.  Head over to the list of free API’s <a class="reference external" href="https://github.com/public-apis/public-apis">here</a> and identify an API of interest.  Make a call to the API and make sense of the results by parsing the resulting <code class="docutils literal notranslate"><span class="pre">.json</span></code>.</p>
+</section>
 <section id="summary">
 <h3>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
 <p>Great job!  Now, you have additional tools for going out and accessing data from a variety of sources.  Your homework this week will involve extracting further information from the API’s and visualizing this with <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
@@ -1163,6 +1183,7 @@ memory usage: 944.0 bytes
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alpha-vantage">ALPHA VANTAGE</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-endpoints">Different Endpoints</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-wrappers">API Wrappers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-api">Finding an api</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 </li>
