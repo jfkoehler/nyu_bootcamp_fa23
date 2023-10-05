@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'dates_intro_to_plotting';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="More plotting with matplotlib and seaborn" href="plotting_seaborn.html" />
+    <link rel="prev" title="Reading Files and Split Apply Combine" href="pandas_II.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,13 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python_fundamentals_one.html">Python Fundamentals 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_fundamentals_two.html">Python Fundamentals 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro_to_numpy.html">Intro to numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro_to_pandas.html">Intro to pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pandas_II.html">Reading Files and Split Apply Combine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_to_plotting.html"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Reading Files and Split Apply Combine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plotting_seaborn.html">More plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="data_apis.html">Accessing Data with API’s</a></li>
@@ -517,7 +519,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;diamonds.csv&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ames_Housing_Sales.csv&#39;,
+ &#39;diamonds.csv&#39;,
  &#39;gapminder_all.csv&#39;,
  &#39;LasVegasTripAdvisorReviews-Dataset.csv&#39;,
  &#39;ufo.csv&#39;,
@@ -1112,57 +1115,57 @@ memory usage: 27.7+ KB
       <th>0</th>
       <td>foo</td>
       <td>one</td>
-      <td>2.051809</td>
-      <td>-0.772290</td>
+      <td>0.014738</td>
+      <td>-0.549100</td>
     </tr>
     <tr>
       <th>1</th>
       <td>bar</td>
       <td>one</td>
-      <td>-0.616229</td>
-      <td>0.301810</td>
+      <td>-1.515979</td>
+      <td>-0.905696</td>
     </tr>
     <tr>
       <th>2</th>
       <td>foo</td>
       <td>two</td>
-      <td>1.735733</td>
-      <td>-1.064756</td>
+      <td>-1.034411</td>
+      <td>-0.157872</td>
     </tr>
     <tr>
       <th>3</th>
       <td>bar</td>
       <td>three</td>
-      <td>-0.105115</td>
-      <td>-0.370921</td>
+      <td>0.392896</td>
+      <td>-1.189066</td>
     </tr>
     <tr>
       <th>4</th>
       <td>foo</td>
       <td>two</td>
-      <td>0.419154</td>
-      <td>-0.306413</td>
+      <td>-0.260686</td>
+      <td>-0.671384</td>
     </tr>
     <tr>
       <th>5</th>
       <td>bar</td>
       <td>two</td>
-      <td>-0.266545</td>
-      <td>-0.547279</td>
+      <td>-1.633476</td>
+      <td>0.943162</td>
     </tr>
     <tr>
       <th>6</th>
       <td>foo</td>
       <td>one</td>
-      <td>-0.064685</td>
-      <td>1.398946</td>
+      <td>-1.707952</td>
+      <td>-0.037748</td>
     </tr>
     <tr>
       <th>7</th>
       <td>foo</td>
       <td>three</td>
-      <td>-0.641329</td>
-      <td>-2.456453</td>
+      <td>-0.709300</td>
+      <td>0.772273</td>
     </tr>
   </tbody>
 </table>
@@ -1177,8 +1180,8 @@ memory usage: 27.7+ KB
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A
-bar   -0.329296
-foo    0.700137
+bar   -0.918853
+foo   -0.739522
 Name: C, dtype: float64
 </pre></div>
 </div>
@@ -1222,18 +1225,18 @@ Name: C, dtype: float64
   <tbody>
     <tr>
       <th>one</th>
-      <td>0.456965</td>
-      <td>0.309489</td>
+      <td>-1.069731</td>
+      <td>-0.497514</td>
     </tr>
     <tr>
       <th>three</th>
-      <td>-0.373222</td>
-      <td>-1.413687</td>
+      <td>-0.158202</td>
+      <td>-0.208397</td>
     </tr>
     <tr>
       <th>two</th>
-      <td>0.629448</td>
-      <td>-0.639483</td>
+      <td>-0.976191</td>
+      <td>0.037969</td>
     </tr>
   </tbody>
 </table>
@@ -1280,34 +1283,34 @@ Name: C, dtype: float64
     <tr>
       <th rowspan="3" valign="top">bar</th>
       <th>one</th>
-      <td>-0.616229</td>
-      <td>0.301810</td>
+      <td>-1.515979</td>
+      <td>-0.905696</td>
     </tr>
     <tr>
       <th>three</th>
-      <td>-0.105115</td>
-      <td>-0.370921</td>
+      <td>0.392896</td>
+      <td>-1.189066</td>
     </tr>
     <tr>
       <th>two</th>
-      <td>-0.266545</td>
-      <td>-0.547279</td>
+      <td>-1.633476</td>
+      <td>0.943162</td>
     </tr>
     <tr>
       <th rowspan="3" valign="top">foo</th>
       <th>one</th>
-      <td>0.993562</td>
-      <td>0.313328</td>
+      <td>-0.846607</td>
+      <td>-0.293424</td>
     </tr>
     <tr>
       <th>three</th>
-      <td>-0.641329</td>
-      <td>-2.456453</td>
+      <td>-0.709300</td>
+      <td>0.772273</td>
     </tr>
     <tr>
       <th>two</th>
-      <td>1.077444</td>
-      <td>-0.685585</td>
+      <td>-0.647549</td>
+      <td>-0.414628</td>
     </tr>
   </tbody>
 </table>
@@ -1350,43 +1353,43 @@ Name: C, dtype: float64
       <th>0</th>
       <td>bar</td>
       <td>one</td>
-      <td>-0.616229</td>
-      <td>0.301810</td>
+      <td>-1.515979</td>
+      <td>-0.905696</td>
     </tr>
     <tr>
       <th>1</th>
       <td>bar</td>
       <td>three</td>
-      <td>-0.105115</td>
-      <td>-0.370921</td>
+      <td>0.392896</td>
+      <td>-1.189066</td>
     </tr>
     <tr>
       <th>2</th>
       <td>bar</td>
       <td>two</td>
-      <td>-0.266545</td>
-      <td>-0.547279</td>
+      <td>-1.633476</td>
+      <td>0.943162</td>
     </tr>
     <tr>
       <th>3</th>
       <td>foo</td>
       <td>one</td>
-      <td>0.993562</td>
-      <td>0.313328</td>
+      <td>-0.846607</td>
+      <td>-0.293424</td>
     </tr>
     <tr>
       <th>4</th>
       <td>foo</td>
       <td>three</td>
-      <td>-0.641329</td>
-      <td>-2.456453</td>
+      <td>-0.709300</td>
+      <td>0.772273</td>
     </tr>
     <tr>
       <th>5</th>
       <td>foo</td>
       <td>two</td>
-      <td>1.077444</td>
-      <td>-0.685585</td>
+      <td>-0.647549</td>
+      <td>-0.414628</td>
     </tr>
   </tbody>
 </table>
@@ -1871,7 +1874,7 @@ memory usage: 192.7 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 10, 4, 21, 25, 33, 930213)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 10, 4, 21, 45, 49, 915930)
 </pre></div>
 </div>
 </div>
@@ -1884,7 +1887,7 @@ memory usage: 192.7 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.timedelta(microseconds=4859)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.timedelta(microseconds=6784)
 </pre></div>
 </div>
 </div>
@@ -1919,7 +1922,7 @@ memory usage: 192.7 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 6, 12, 21, 25, 33, 930213)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 6, 12, 21, 45, 49, 915930)
 </pre></div>
 </div>
 </div>
@@ -1978,6 +1981,24 @@ memory usage: 192.7 KB
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="pandas_II.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Reading Files and Split Apply Combine</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="plotting_seaborn.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">More plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>

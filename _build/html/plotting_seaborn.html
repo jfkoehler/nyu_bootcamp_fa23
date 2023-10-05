@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Accessing Data with API’s" href="data_apis.html" />
-    <link rel="prev" title="datetime, and matplotlib intro" href="intro_to_plotting.html" />
+    <link rel="prev" title="Reading Files and Split Apply Combine" href="dates_intro_to_plotting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="intro_to_numpy.html">Intro to numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro_to_pandas.html">Intro to pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pandas_II.html">Reading Files and Split Apply Combine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_to_plotting.html"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dates_intro_to_plotting.html">Reading Files and Split Apply Combine</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">More plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="data_apis.html">Accessing Data with API’s</a></li>
@@ -485,22 +485,12 @@ document.write(`
 <span class="c1">### add histogram to bottom right plot</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1">#bottom right?</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aapl</span><span class="p">[</span><span class="s1">&#39;Adj Close&#39;</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">appl</span><span class="p">[</span><span class="s1">&#39;Adj Close&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">#bottom right?</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">aapl</span><span class="p">[</span><span class="s1">&#39;Adj Close&#39;</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;aapl&#39; is not defined
-</pre></div>
-</div>
-<img alt="_images/a1b50e41b623cc5190541ad0e6836a24ccb2b6aba29d0c66a4453a4dcfc2ea15.png" src="_images/a1b50e41b623cc5190541ad0e6836a24ccb2b6aba29d0c66a4453a4dcfc2ea15.png" />
+<img alt="_images/af47a1b3114896a991b8ba1de091ef4fca95744fa44c32c32d73be99cc345ddd.png" src="_images/af47a1b3114896a991b8ba1de091ef4fca95744fa44c32c32d73be99cc345ddd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -543,7 +533,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d71d3c7ce9bd45849ce1a875139acbbf260f7c6f72cc2937d4b9421988b3e3c0.png" src="_images/d71d3c7ce9bd45849ce1a875139acbbf260f7c6f72cc2937d4b9421988b3e3c0.png" />
+<img alt="_images/5300094244630d346822e37ae06f97e0ed4cdc81f1800e1918e2226209e116c2.png" src="_images/5300094244630d346822e37ae06f97e0ed4cdc81f1800e1918e2226209e116c2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -557,7 +547,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/156a749a9967b95275f9f256f4a1818cc8ab29d4fffb2f02adcb8f68c9a229e6.png" src="_images/156a749a9967b95275f9f256f4a1818cc8ab29d4fffb2f02adcb8f68c9a229e6.png" />
+<img alt="_images/84044bb27e866a427261c5562408dcf52071bd236c64fcbdcb719165b8b90387.png" src="_images/84044bb27e866a427261c5562408dcf52071bd236c64fcbdcb719165b8b90387.png" />
 </div>
 </div>
 </section>
@@ -599,7 +589,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e0fc65215467500a5f7257ce811c2b8b4dae256247e0cdee5dee6eb99aff8098.png" src="_images/e0fc65215467500a5f7257ce811c2b8b4dae256247e0cdee5dee6eb99aff8098.png" />
+<img alt="_images/76236bc00320a46b9a345f4542e49433dd5a0d3024438a3f3c1a9eb4f4b0b0ae.png" src="_images/76236bc00320a46b9a345f4542e49433dd5a0d3024438a3f3c1a9eb4f4b0b0ae.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -624,7 +614,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/35b706131a79c2b3fc39b6f8e88ef2af288c403087d38b332062b91a576221da.png" src="_images/35b706131a79c2b3fc39b6f8e88ef2af288c403087d38b332062b91a576221da.png" />
+<img alt="_images/66b8b24a827d04c0d6e29a873beb00b296a70fa2444f241e89e3773091dc1137.png" src="_images/66b8b24a827d04c0d6e29a873beb00b296a70fa2444f241e89e3773091dc1137.png" />
 </div>
 </div>
 <section id="problems">
@@ -841,7 +831,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1b12e6371adc97dec4cec7c39363837897ce3c7decbf7507e0dcd37a1d932ca8.png" src="_images/1b12e6371adc97dec4cec7c39363837897ce3c7decbf7507e0dcd37a1d932ca8.png" />
+<img alt="_images/e4e2c28f979b3d69e037325e74e3d641cf952c43f783a02984e606bfd98c1260.png" src="_images/e4e2c28f979b3d69e037325e74e3d641cf952c43f783a02984e606bfd98c1260.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -852,10 +842,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;day&#39;, ylabel=&#39;tip&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;day&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/4489320ddc303ddbc7874d8ad581adfbdc64001e72b86ad93da20206b3738450.png" src="_images/4489320ddc303ddbc7874d8ad581adfbdc64001e72b86ad93da20206b3738450.png" />
+<img alt="_images/2e44e04f8cbc31b42f99734f3b6e17f876b4348920909301dbab9bad7950e4ce.png" src="_images/2e44e04f8cbc31b42f99734f3b6e17f876b4348920909301dbab9bad7950e4ce.png" />
 </div>
 </div>
 </section>
@@ -870,10 +860,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa488982f40&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/site-packages/seaborn/axisgrid.py:123: UserWarning: The figure layout has changed to tight
+  self._figure.tight_layout(*args, **kwargs)
 </pre></div>
 </div>
-<img alt="_images/25e075aeca2fad339dc8f1de6eff1b2de24a7d5c5223b6188e2d650c92b562a2.png" src="_images/25e075aeca2fad339dc8f1de6eff1b2de24a7d5c5223b6188e2d650c92b562a2.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x12af27c90&gt;
+</pre></div>
+</div>
+<img alt="_images/25d192ddb399344ecdef412d2d794eaf30072849354b8df11045e7a918d9a19c.png" src="_images/25d192ddb399344ecdef412d2d794eaf30072849354b8df11045e7a918d9a19c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -884,10 +878,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa486ac1190&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/site-packages/seaborn/axisgrid.py:123: UserWarning: The figure layout has changed to tight
+  self._figure.tight_layout(*args, **kwargs)
 </pre></div>
 </div>
-<img alt="_images/e4c0af5172864f72180bc110a92c86969d4976d37327a8fcfd864344cc2e85ea.png" src="_images/e4c0af5172864f72180bc110a92c86969d4976d37327a8fcfd864344cc2e85ea.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x12a0ef310&gt;
+</pre></div>
+</div>
+<img alt="_images/2df8fdee9a0a84fa75e09954dfaf0415881c468c70517f9059f93930acad5588.png" src="_images/2df8fdee9a0a84fa75e09954dfaf0415881c468c70517f9059f93930acad5588.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -898,10 +896,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa4884ace20&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/site-packages/seaborn/axisgrid.py:123: UserWarning: The figure layout has changed to tight
+  self._figure.tight_layout(*args, **kwargs)
 </pre></div>
 </div>
-<img alt="_images/f6feff9076557d14916664cfc07e8c4e0568b6ee324a26b27780a95e192c21b0.png" src="_images/f6feff9076557d14916664cfc07e8c4e0568b6ee324a26b27780a95e192c21b0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x12b165510&gt;
+</pre></div>
+</div>
+<img alt="_images/da7045433cbd945d49657e38a7089df3bf75cd26c39e92e753a87039e44ebe9d.png" src="_images/da7045433cbd945d49657e38a7089df3bf75cd26c39e92e753a87039e44ebe9d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -912,10 +914,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa486b8ddc0&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/site-packages/seaborn/axisgrid.py:123: UserWarning: The figure layout has changed to tight
+  self._figure.tight_layout(*args, **kwargs)
 </pre></div>
 </div>
-<img alt="_images/5a7c3c16b0d946db518697d39d1f2dd2a31209841ef6f77a5c6b34a83e032f6f.png" src="_images/5a7c3c16b0d946db518697d39d1f2dd2a31209841ef6f77a5c6b34a83e032f6f.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x12b12fdd0&gt;
+</pre></div>
+</div>
+<img alt="_images/2e3a7991ff192ab3b0689932cd286ec9f9e8829acb96b59732b00c3f734e2a5a.png" src="_images/2e3a7991ff192ab3b0689932cd286ec9f9e8829acb96b59732b00c3f734e2a5a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -930,7 +936,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/efe3b03879e5a005d6ba45045f223ae9e6de481ba743f01d5558bbda52ba3673.png" src="_images/efe3b03879e5a005d6ba45045f223ae9e6de481ba743f01d5558bbda52ba3673.png" />
+<img alt="_images/b9f9991bfe505cebdb46b9455be9e83d0d8f4facad7e963b3a901187ca38c0e5.png" src="_images/b9f9991bfe505cebdb46b9455be9e83d0d8f4facad7e963b3a901187ca38c0e5.png" />
 </div>
 </div>
 </section>
@@ -945,10 +951,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fa4893080d0&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/site-packages/seaborn/axisgrid.py:123: UserWarning: The figure layout has changed to tight
+  self._figure.tight_layout(*args, **kwargs)
 </pre></div>
 </div>
-<img alt="_images/3ad85b2b13b5891eef785c490208b960846bd3df9586000562f987ad391d9aaa.png" src="_images/3ad85b2b13b5891eef785c490208b960846bd3df9586000562f987ad391d9aaa.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x12d339090&gt;
+</pre></div>
+</div>
+<img alt="_images/867de8a9f56fcad6830f3f5e52671ef7ef7af96adffed1c56502d9b750cc1e08.png" src="_images/867de8a9f56fcad6830f3f5e52671ef7ef7af96adffed1c56502d9b750cc1e08.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -959,10 +969,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/2211dbaf5c44d02a64ea0491ae421c7144c8e594f3ec934ec9cbe948964a07b8.png" src="_images/2211dbaf5c44d02a64ea0491ae421c7144c8e594f3ec934ec9cbe948964a07b8.png" />
+<img alt="_images/d2db8323f8531977312cd5203920883380f64c7b683cb054a6023cde9d444225.png" src="_images/d2db8323f8531977312cd5203920883380f64c7b683cb054a6023cde9d444225.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -973,10 +983,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;smoker&#39;, ylabel=&#39;tip&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;smoker&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/c82461709f983aed033b0ebd55d5687016ae0ddab369abe1bd0b11904a009acc.png" src="_images/c82461709f983aed033b0ebd55d5687016ae0ddab369abe1bd0b11904a009acc.png" />
+<img alt="_images/1f9f5ba2c285a55c36e3abaee1005f702d97eccb200b307099f163de138216cc.png" src="_images/1f9f5ba2c285a55c36e3abaee1005f702d97eccb200b307099f163de138216cc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -987,10 +997,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;smoker&#39;, ylabel=&#39;tip&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;smoker&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/f41032bc33229724104cbcedacf4425b9d6fe71e28f4ad7fb5f08e6e8fcd1ff7.png" src="_images/f41032bc33229724104cbcedacf4425b9d6fe71e28f4ad7fb5f08e6e8fcd1ff7.png" />
+<img alt="_images/efd6d04ad4fa0576bec374aeac97c72414cf6b793228ff912b239c685ed8c95c.png" src="_images/efd6d04ad4fa0576bec374aeac97c72414cf6b793228ff912b239c685ed8c95c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1001,7 +1011,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a15d02e04117ef4b3093add1806711278165c019453e66a6b8ad59ff32a08350.png" src="_images/a15d02e04117ef4b3093add1806711278165c019453e66a6b8ad59ff32a08350.png" />
+<img alt="_images/bfc43d6ace2e31a289c09fb521ce43dbf9ab28b4651549bb59c9fe5e71d0fac5.png" src="_images/bfc43d6ace2e31a289c09fb521ce43dbf9ab28b4651549bb59c9fe5e71d0fac5.png" />
 </div>
 </div>
 <ol class="arabic simple">
@@ -1042,10 +1052,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fa488e114c0&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/site-packages/seaborn/axisgrid.py:123: UserWarning: The figure layout has changed to tight
+  self._figure.tight_layout(*args, **kwargs)
 </pre></div>
 </div>
-<img alt="_images/3ceb41040dd70189f5c0e1cd01ee9016b2eb82fd138d8083ed89011d10fd9e98.png" src="_images/3ceb41040dd70189f5c0e1cd01ee9016b2eb82fd138d8083ed89011d10fd9e98.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x12d3c12d0&gt;
+</pre></div>
+</div>
+<img alt="_images/6e1820df92b30abdcde43659ec54383e09027883c6f9a0aadff2abe04f98b0b1.png" src="_images/6e1820df92b30abdcde43659ec54383e09027883c6f9a0aadff2abe04f98b0b1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1308,10 +1322,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: &gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/93114d2bee4f4931aeb0d318be1f7e5606242349da560eed0f31a40f3b576496.png" src="_images/93114d2bee4f4931aeb0d318be1f7e5606242349da560eed0f31a40f3b576496.png" />
+<img alt="_images/2ec5845d6e40d09f4803394ae28187fb453835dc08e995f53932d388f82cb965.png" src="_images/2ec5845d6e40d09f4803394ae28187fb453835dc08e995f53932d388f82cb965.png" />
 </div>
 </div>
 </section>
@@ -1328,6 +1342,12 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes</span> <span class="o">=</span> <span class="n">fetch_openml</span><span class="p">(</span><span class="n">data_id</span> <span class="o">=</span> <span class="mi">37</span><span class="p">)</span><span class="o">.</span><span class="n">frame</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/site-packages/sklearn/datasets/_openml.py:1022: FutureWarning: The default value of `parser` will change from `&#39;liac-arff&#39;` to `&#39;auto&#39;` in 1.4. You can set `parser=&#39;auto&#39;` to silence this warning. Therefore, an `ImportError` will be raised from 1.4 if the dataset is dense and pandas is not installed. Note that the pandas parser may return different data types. See the Notes Section in fetch_openml&#39;s API doc for details.
+  warn(
 </pre></div>
 </div>
 </div>
@@ -1498,12 +1518,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro_to_plotting.html"
+       href="dates_intro_to_plotting.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</p>
+        <p class="prev-next-title">Reading Files and Split Apply Combine</p>
       </div>
     </a>
     <a class="right-next"

@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'pandas_II';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="datetime, and matplotlib intro" href="intro_to_plotting.html" />
+    <link rel="next" title="Reading Files and Split Apply Combine" href="dates_intro_to_plotting.html" />
     <link rel="prev" title="Intro to pandas" href="intro_to_pandas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="intro_to_numpy.html">Intro to numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro_to_pandas.html">Intro to pandas</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Reading Files and Split Apply Combine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_to_plotting.html"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dates_intro_to_plotting.html">Reading Files and Split Apply Combine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plotting_seaborn.html">More plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="data_apis.html">Accessing Data with API’s</a></li>
@@ -513,7 +513,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;diamonds.csv&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ames_Housing_Sales.csv&#39;,
+ &#39;diamonds.csv&#39;,
  &#39;gapminder_all.csv&#39;,
  &#39;LasVegasTripAdvisorReviews-Dataset.csv&#39;,
  &#39;ufo.csv&#39;,
@@ -1371,57 +1372,57 @@ dtype: int64
       <th>0</th>
       <td>foo</td>
       <td>one</td>
-      <td>-0.098766</td>
-      <td>1.436213</td>
+      <td>-0.310831</td>
+      <td>-0.176889</td>
     </tr>
     <tr>
       <th>1</th>
       <td>bar</td>
       <td>one</td>
-      <td>-0.011594</td>
-      <td>0.135607</td>
+      <td>-1.469531</td>
+      <td>1.719159</td>
     </tr>
     <tr>
       <th>2</th>
       <td>foo</td>
       <td>two</td>
-      <td>0.461883</td>
-      <td>-0.038583</td>
+      <td>0.904144</td>
+      <td>-0.340193</td>
     </tr>
     <tr>
       <th>3</th>
       <td>bar</td>
       <td>three</td>
-      <td>1.265087</td>
-      <td>1.232747</td>
+      <td>0.582278</td>
+      <td>-0.565501</td>
     </tr>
     <tr>
       <th>4</th>
       <td>foo</td>
       <td>two</td>
-      <td>0.217333</td>
-      <td>0.036483</td>
+      <td>0.880831</td>
+      <td>-0.624510</td>
     </tr>
     <tr>
       <th>5</th>
       <td>bar</td>
       <td>two</td>
-      <td>-0.077996</td>
-      <td>-1.357685</td>
+      <td>-0.376320</td>
+      <td>-1.155438</td>
     </tr>
     <tr>
       <th>6</th>
       <td>foo</td>
       <td>one</td>
-      <td>0.885381</td>
-      <td>0.797862</td>
+      <td>-0.016199</td>
+      <td>0.311163</td>
     </tr>
     <tr>
       <th>7</th>
       <td>foo</td>
       <td>three</td>
-      <td>-0.788936</td>
-      <td>1.418144</td>
+      <td>-0.921767</td>
+      <td>-0.547732</td>
     </tr>
   </tbody>
 </table>
@@ -1465,13 +1466,13 @@ dtype: int64
   <tbody>
     <tr>
       <th>bar</th>
-      <td>0.391832</td>
-      <td>0.003556</td>
+      <td>-0.421191</td>
+      <td>-0.000593</td>
     </tr>
     <tr>
       <th>foo</th>
-      <td>0.135379</td>
-      <td>0.730024</td>
+      <td>0.107236</td>
+      <td>-0.275632</td>
     </tr>
   </tbody>
 </table>
@@ -1515,18 +1516,18 @@ dtype: int64
   <tbody>
     <tr>
       <th>one</th>
-      <td>0.258340</td>
-      <td>0.789894</td>
+      <td>-0.598853</td>
+      <td>0.617811</td>
     </tr>
     <tr>
       <th>three</th>
-      <td>0.238076</td>
-      <td>1.325445</td>
+      <td>-0.169744</td>
+      <td>-0.556616</td>
     </tr>
     <tr>
       <th>two</th>
-      <td>0.200406</td>
-      <td>-0.453262</td>
+      <td>0.469551</td>
+      <td>-0.706714</td>
     </tr>
   </tbody>
 </table>
@@ -1573,34 +1574,34 @@ dtype: int64
     <tr>
       <th rowspan="3" valign="top">bar</th>
       <th>one</th>
-      <td>-0.011594</td>
-      <td>0.135607</td>
+      <td>-1.469531</td>
+      <td>1.719159</td>
     </tr>
     <tr>
       <th>three</th>
-      <td>1.265087</td>
-      <td>1.232747</td>
+      <td>0.582278</td>
+      <td>-0.565501</td>
     </tr>
     <tr>
       <th>two</th>
-      <td>-0.077996</td>
-      <td>-1.357685</td>
+      <td>-0.376320</td>
+      <td>-1.155438</td>
     </tr>
     <tr>
       <th rowspan="3" valign="top">foo</th>
       <th>one</th>
-      <td>0.393308</td>
-      <td>1.117038</td>
+      <td>-0.163515</td>
+      <td>0.067137</td>
     </tr>
     <tr>
       <th>three</th>
-      <td>-0.788936</td>
-      <td>1.418144</td>
+      <td>-0.921767</td>
+      <td>-0.547732</td>
     </tr>
     <tr>
       <th>two</th>
-      <td>0.339608</td>
-      <td>-0.001050</td>
+      <td>0.892487</td>
+      <td>-0.482352</td>
     </tr>
   </tbody>
 </table>
@@ -1643,43 +1644,43 @@ dtype: int64
       <th>0</th>
       <td>bar</td>
       <td>one</td>
-      <td>-0.011594</td>
-      <td>0.135607</td>
+      <td>-1.469531</td>
+      <td>1.719159</td>
     </tr>
     <tr>
       <th>1</th>
       <td>bar</td>
       <td>three</td>
-      <td>1.265087</td>
-      <td>1.232747</td>
+      <td>0.582278</td>
+      <td>-0.565501</td>
     </tr>
     <tr>
       <th>2</th>
       <td>bar</td>
       <td>two</td>
-      <td>-0.077996</td>
-      <td>-1.357685</td>
+      <td>-0.376320</td>
+      <td>-1.155438</td>
     </tr>
     <tr>
       <th>3</th>
       <td>foo</td>
       <td>one</td>
-      <td>0.393308</td>
-      <td>1.117038</td>
+      <td>-0.163515</td>
+      <td>0.067137</td>
     </tr>
     <tr>
       <th>4</th>
       <td>foo</td>
       <td>three</td>
-      <td>-0.788936</td>
-      <td>1.418144</td>
+      <td>-0.921767</td>
+      <td>-0.547732</td>
     </tr>
     <tr>
       <th>5</th>
       <td>foo</td>
       <td>two</td>
-      <td>0.339608</td>
-      <td>-0.001050</td>
+      <td>0.892487</td>
+      <td>-0.482352</td>
     </tr>
   </tbody>
 </table>
@@ -1859,11 +1860,11 @@ dtype: int64
       </div>
     </a>
     <a class="right-next"
-       href="intro_to_plotting.html"
+       href="dates_intro_to_plotting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</p>
+        <p class="prev-next-title">Reading Files and Split Apply Combine</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

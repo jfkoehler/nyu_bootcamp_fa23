@@ -9,6 +9,6 @@ chapters:
 - file: intro_to_numpy
 - file: intro_to_pandas
 - file: pandas_II
-- file: intro_to_plotting
+- file: dates_intro_to_plotting
 - file: plotting_seaborn
 - file: data_apis
