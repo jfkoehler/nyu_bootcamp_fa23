@@ -18,21 +18,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-### add a plot to each axis
-fig, ax = plt.subplots(1, 2, figsize = (20, 5))
-ax[0].plot([1, 2, 3])
-ax[1].hist(appl['Adj Close']);
-ax[0].set_title('A Line');
+### create a 2 x 2 grid of plots
+### add histogram to bottom right plot
+fig, ax = plt.subplots(nrows=2, ncols = 2)
+#bottom right?
+ax[1, 1].hist(aapl['Adj Close'])
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[4], line 4[0m
-[1;32m      2[0m fig, ax [38;5;241m=[39m plt[38;5;241m.[39msubplots([38;5;241m1[39m, [38;5;241m2[39m, figsize [38;5;241m=[39m ([38;5;241m20[39m, [38;5;241m5[39m))
-[1;32m      3[0m ax[[38;5;241m0[39m][38;5;241m.[39mplot([[38;5;241m1[39m, [38;5;241m2[39m, [38;5;241m3[39m])
-[0;32m----> 4[0m ax[[38;5;241m1[39m][38;5;241m.[39mhist([43mappl[49m[[38;5;124m'[39m[38;5;124mAdj Close[39m[38;5;124m'[39m]);
-[1;32m      5[0m ax[[38;5;241m0[39m][38;5;241m.[39mset_title([38;5;124m'[39m[38;5;124mA Line[39m[38;5;124m'[39m);
+Cell [0;32mIn[6], line 5[0m
+[1;32m      3[0m fig, ax [38;5;241m=[39m plt[38;5;241m.[39msubplots(nrows[38;5;241m=[39m[38;5;241m2[39m, ncols [38;5;241m=[39m [38;5;241m2[39m)
+[1;32m      4[0m [38;5;66;03m#bottom right?[39;00m
+[0;32m----> 5[0m ax[[38;5;241m1[39m, [38;5;241m1[39m][38;5;241m.[39mhist([43maapl[49m[[38;5;124m'[39m[38;5;124mAdj Close[39m[38;5;124m'[39m])
 
-[0;31mNameError[0m: name 'appl' is not defined
+[0;31mNameError[0m: name 'aapl' is not defined
 

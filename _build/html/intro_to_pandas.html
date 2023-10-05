@@ -165,6 +165,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="intro_to_plotting.html"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plotting_seaborn.html">More plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="data_apis.html">Accessing Data with API’s</a></li>
+
+
 </ul>
 
     </div>
@@ -481,6 +484,12 @@ are already created for us, then when we import pandas they are ready to go.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a series from a dictionary</span>
 <span class="n">gdp</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;GDP&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">5974.7</span><span class="p">,</span> <span class="mf">10031.0</span><span class="p">,</span> <span class="mf">14681.1</span><span class="p">]}</span> 
 <span class="c1"># what kind of data structure is this</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">gdp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
 </pre></div>
 </div>
 </div>
@@ -489,6 +498,13 @@ are already created for us, then when we import pandas they are ready to go.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;name&#39; parameter specifies the column name of the series object</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">gdp</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;GDP&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GDP    [5974.7, 10031.0, 14681.1]
+Name: GDP, dtype: object
 </pre></div>
 </div>
 </div>
@@ -497,11 +513,20 @@ are already created for us, then when we import pandas they are ready to go.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a series from a numpy 1 dimension array</span>
 <span class="n">cpi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">127.5</span><span class="p">,</span> <span class="mf">169.3</span><span class="p">,</span> <span class="mf">217.488</span><span class="p">])</span>
-
+<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">cpi</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CPI&#39;</span><span class="p">)</span>
 
 <span class="c1"># create series from a list</span>
 <span class="n">year</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2010</span><span class="p">]</span>
 <span class="n">country</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;US&quot;</span><span class="p">,</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span> <span class="s2">&quot;US&quot;</span><span class="p">]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">year</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1990    US
+2000    US
+2010    US
+Name: country, dtype: object
 </pre></div>
 </div>
 </div>
@@ -514,13 +539,68 @@ are already created for us, then when we import pandas they are ready to go.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#concatenate series along axis = 1</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">country</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">year</span><span class="p">)),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>US</td>
+      <td>1990</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>US</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>US</td>
+      <td>2010</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#concatenate series along axis = 0</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">country</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">year</span><span class="p">)),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      US
+1      US
+2      US
+0    1990
+1    2000
+2    2010
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -547,6 +627,7 @@ are already created for us, then when we import pandas they are ready to go.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -554,6 +635,12 @@ are already created for us, then when we import pandas they are ready to go.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check the type</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
 </pre></div>
 </div>
 </div>
@@ -561,6 +648,79 @@ are already created for us, then when we import pandas they are ready to go.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># examine the frame</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>Year</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5974.7</td>
+      <td>127.500</td>
+      <td>1990</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.300</td>
+      <td>2000</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>2010</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 3 entries, 0 to 2
+Data columns (total 4 columns):
+ #   Column   Non-Null Count  Dtype  
+---  ------   --------------  -----  
+ 0   GDP      3 non-null      float64
+ 1   CPI      3 non-null      float64
+ 2   Year     3 non-null      int64  
+ 3   Country  3 non-null      object 
+dtypes: float64(2), int64(1), object(1)
+memory usage: 228.0+ bytes
 </pre></div>
 </div>
 </div>
@@ -574,15 +734,55 @@ are already created for us, then when we import pandas they are ready to go.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>Year</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5974.7</td>
+      <td>127.500</td>
+      <td>1990</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.300</td>
+      <td>2000</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>2010</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>This lays out the data in a very intuitive way, columns will be labeled as they are in the excel file.</p>
 </section>
@@ -603,6 +803,12 @@ Where as this could be very hard to do in the data variable above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#shape</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 4)
 </pre></div>
 </div>
 </div>
@@ -610,6 +816,12 @@ Where as this could be very hard to do in the data variable above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;GDP&#39;, &#39;CPI&#39;, &#39;Year&#39;, &#39;Country&#39;], dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -617,6 +829,12 @@ Where as this could be very hard to do in the data variable above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#index</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RangeIndex(start=0, stop=3, step=1)
 </pre></div>
 </div>
 </div>
@@ -624,6 +842,16 @@ Where as this could be very hard to do in the data variable above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#data types</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GDP        float64
+CPI        float64
+Year         int64
+Country     object
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -668,6 +896,15 @@ it is recognized as a number (ii) if not, then it is just going to be an object.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#select a column</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;GDP&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     5974.7
+1    10031.0
+2    14681.1
+Name: GDP, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -680,13 +917,31 @@ it is recognized as a number (ii) if not, then it is just going to be an object.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#dot notation</span>
+<span class="n">df</span><span class="o">.</span><span class="n">GDP</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     5974.7
+1    10031.0
+2    14681.1
+Name: GDP, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># .iloc</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># .iloc -- numeric index row, column</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     5974.7
+1    10031.0
+2    14681.1
+Name: GDP, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -700,16 +955,102 @@ it is recognized as a number (ii) if not, then it is just going to be an object.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select multiple columns</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span> <span class="s1">&#39;CPI&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5974.7</td>
+      <td>127.500</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.300</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can also do this with iloc.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5974.7</td>
+      <td>127.500</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.300</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>But why only two columns selected?</p>
 <p><strong>Note:</strong> this is different for what we have learned in numpy <code class="docutils literal notranslate"><span class="pre">array</span></code>.</p>
@@ -721,6 +1062,7 @@ it is recognized as a number (ii) if not, then it is just going to be an object.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#uppercase the names</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -731,19 +1073,96 @@ the new one, but the saved df is the same…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rename method</span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">&#39;GDP&#39;</span><span class="p">:</span> <span class="s1">&#39;gdp&#39;</span><span class="p">},</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gdp</th>
+      <th>CPI</th>
+      <th>YEAR</th>
+      <th>COUNTRY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5974.7</td>
+      <td>127.500</td>
+      <td>1990</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.300</td>
+      <td>2000</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>2010</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
 <section id="play-with-rows">
 <h3>Play with Rows<a class="headerlink" href="#play-with-rows" title="Permalink to this heading">#</a></h3>
 <p>The most brute force way to grab rows is via just <strong><code class="docutils literal notranslate"><span class="pre">iloc</span></code></strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GDP        5974.7
+CPI         127.5
+YEAR         1990
+COUNTRY        US
+Name: 0, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
 <p>For example, if we want to grab the second row. Then it is the same for <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">numpy</span></code> data structure indexing system.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># second row</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GDP        10031.0
+CPI          169.3
+YEAR          2000
+COUNTRY         US
+Name: 1, dtype: object
 </pre></div>
 </div>
 </div>
@@ -752,24 +1171,142 @@ the new one, but the saved df is the same…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># slice of rows</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>YEAR</th>
+      <th>COUNTRY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5974.7</td>
+      <td>127.5</td>
+      <td>1990</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.3</td>
+      <td>2000</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>But the above way is hard to do conditional selection. For example, if we want to select the year at 2000.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># conditional with .loc</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;YEAR&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2000</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>YEAR</th>
+      <th>COUNTRY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.3</td>
+      <td>2000</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will also work</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;YEAR&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2000</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>YEAR</th>
+      <th>COUNTRY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.3</td>
+      <td>2000</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="set-row-index">
@@ -792,22 +1329,127 @@ the new one, but the saved df is the same…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set index</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;YEAR&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>COUNTRY</th>
+    </tr>
+    <tr>
+      <th>YEAR</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1990</th>
+      <td>5974.7</td>
+      <td>127.500</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2000</th>
+      <td>10031.0</td>
+      <td>169.300</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># did it change?</span>
+<span class="n">df</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>YEAR</th>
+      <th>COUNTRY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5974.7</td>
+      <td>127.500</td>
+      <td>1990</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.300</td>
+      <td>2000</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>2010</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Why is the index back to the original…well its just like string methods, the original data frame is not fundamentally changed. To change it you need to either (i) assign the modified data frame either to itself or to a new name or (ii) use the inplace = True command where it does not create a new object, but directly creates the new index on the old object.</p>
 <p>So if we set the parameter <code class="docutils literal notranslate"><span class="pre">inplace</span></code> = True…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># try with inplace</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;YEAR&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -819,17 +1461,126 @@ the new one, but the saved df is the same…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reset the index</span>
+<span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YEAR</th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>COUNTRY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1990</td>
+      <td>5974.7</td>
+      <td>127.500</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2000</td>
+      <td>10031.0</td>
+      <td>169.300</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2010</td>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>If we set the <code class="docutils literal notranslate"><span class="pre">inplace</span></code> parameter = True, we will have similar results as <code class="docutils literal notranslate"><span class="pre">set_index</span></code> methods.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use with .inplace</span>
+<span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YEAR</th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>COUNTRY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1990</td>
+      <td>5974.7</td>
+      <td>127.500</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2000</td>
+      <td>10031.0</td>
+      <td>169.300</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2010</td>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <hr class="docutils" />
@@ -842,6 +1593,77 @@ the new one, but the saved df is the same…</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>countrycode</th>
+      <th>pop</th>
+      <th>rgdpe</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CHN</td>
+      <td>1124.8</td>
+      <td>2.611</td>
+      <td>1990</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CHN</td>
+      <td>1246.8</td>
+      <td>4.951</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>1318.2</td>
+      <td>11.106</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>FRA</td>
+      <td>58.2</td>
+      <td>1.294</td>
+      <td>1990</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>FRA</td>
+      <td>60.8</td>
+      <td>1.753</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>FRA</td>
+      <td>64.7</td>
+      <td>2.032</td>
+      <td>2010</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p><strong>Exercise.</strong> How would you extract all rows for just one country, say “FRA”?</p>
 <p><strong>Exercise.</strong> How would you extract two rows which have the latest data for “FRA” and “CHN”?</p>
@@ -858,6 +1680,56 @@ the new one, but the saved df is the same…</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>Year</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5974.7</td>
+      <td>127.500</td>
+      <td>1990</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.300</td>
+      <td>2000</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>2010</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Can you guess what will happen, if…</p>
 <div class="cell docutils container">
@@ -866,6 +1738,52 @@ the new one, but the saved df is the same…</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>Year</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5974.7</td>
+      <td>1990</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>2000</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>2010</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -873,6 +1791,49 @@ the new one, but the saved df is the same…</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>Year</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.300</td>
+      <td>2000</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>2010</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -880,6 +1841,56 @@ the new one, but the saved df is the same…</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>Year</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5974.7</td>
+      <td>127.500</td>
+      <td>1990</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.300</td>
+      <td>2000</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>2010</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Now, we can conclude: if we want to perform operations columnwise, we should set <strong>axis</strong> = 1 while for row-wise, <strong>axis</strong> = 0. We will see more examples for the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> calculations part to help us grasp the idea.</p>
 </section>
@@ -907,18 +1918,111 @@ axis = 0 which are rows…and there is no index named “CPI”</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>Year</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5974.7</td>
+      <td>127.500</td>
+      <td>1990</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.300</td>
+      <td>2000</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>2010</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># if we just want to select the particular rows</span>
 <span class="c1"># Here we select rows with CPI larger than 170</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;CPI&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">170</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>Year</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>2010</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># if we want to select the particular rows while selecting the specified columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;GDP&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14681.1
 </pre></div>
 </div>
 </div>
@@ -955,6 +2059,28 @@ axis = 0 which are rows…and there is no index named “CPI”</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.series.Series&#39;&gt;
+0    11949.4
+1    20062.0
+2    29362.2
+Name: GDP, dtype: float64
+0    46.860392
+1    59.249852
+2    67.503035
+dtype: float64
+0    100.000000
+1    167.891275
+2    245.721124
+Name: GDP, dtype: float64
+
+        GDP      CPI  Year Country       RGDP  GDP_div_1000
+0   5974.7  127.500  1990      US  46.860392        5.9747
+1  10031.0  169.300  2000      US  59.249852       10.0310
+2  14681.1  217.488  2010      US  67.503035       14.6811
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -962,6 +2088,64 @@ axis = 0 which are rows…and there is no index named “CPI”</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>RGDP</th>
+      <th>GDP_div_1000</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5974.7</td>
+      <td>127.500</td>
+      <td>1990</td>
+      <td>US</td>
+      <td>46.860392</td>
+      <td>5.9747</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.300</td>
+      <td>2000</td>
+      <td>US</td>
+      <td>59.249852</td>
+      <td>10.0310</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>2010</td>
+      <td>US</td>
+      <td>67.503035</td>
+      <td>14.6811</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <section id="operations-across-rows-columns">
 <h3>Operations across rows/columns<a class="headerlink" href="#operations-across-rows-columns" title="Permalink to this heading">#</a></h3>
@@ -973,11 +2157,30 @@ Can you think of the execution results?</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GDP                30686.8
+CPI                514.288
+Year                  6000
+Country             USUSUS
+RGDP            173.613279
+GDP_div_1000       30.6868
+dtype: object
+</pre></div>
+</div>
+</div>
 </div>
 <p>How about this one? Can even it be executed? Remember we have one column with string data structures.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     8145.035092
+1    12269.580852
+2    16990.772135
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -986,8 +2189,32 @@ Can you think of the execution results?</p>
 <p>Can you try the following?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GDP             1.897973e+07
+CPI             2.027861e+03
+Year            1.000000e+02
+RGDP            1.079554e+02
+GDP_div_1000    1.897973e+01
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    6.601827e+06
+1    1.863618e+07
+2    4.047240e+07
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1008,9 +2235,306 @@ Can you think of the execution results?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># .describe()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>Year</th>
+      <th>RGDP</th>
+      <th>GDP_div_1000</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3.000000</td>
+      <td>3.000000</td>
+      <td>3.0</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>10228.933333</td>
+      <td>171.429333</td>
+      <td>2000.0</td>
+      <td>57.871093</td>
+      <td>10.228933</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>4356.573590</td>
+      <td>45.031773</td>
+      <td>10.0</td>
+      <td>10.390159</td>
+      <td>4.356574</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>5974.700000</td>
+      <td>127.500000</td>
+      <td>1990.0</td>
+      <td>46.860392</td>
+      <td>5.974700</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>8002.850000</td>
+      <td>148.400000</td>
+      <td>1995.0</td>
+      <td>53.055122</td>
+      <td>8.002850</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>10031.000000</td>
+      <td>169.300000</td>
+      <td>2000.0</td>
+      <td>59.249852</td>
+      <td>10.031000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>12356.050000</td>
+      <td>193.394000</td>
+      <td>2005.0</td>
+      <td>63.376443</td>
+      <td>12.356050</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>14681.100000</td>
+      <td>217.488000</td>
+      <td>2010.0</td>
+      <td>67.503035</td>
+      <td>14.681100</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>RGDP</th>
+      <th>GDP_div_1000</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5974.7</td>
+      <td>127.500</td>
+      <td>1990</td>
+      <td>US</td>
+      <td>46.860392</td>
+      <td>5.9747</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10031.0</td>
+      <td>169.300</td>
+      <td>2000</td>
+      <td>US</td>
+      <td>59.249852</td>
+      <td>10.0310</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14681.1</td>
+      <td>217.488</td>
+      <td>2010</td>
+      <td>US</td>
+      <td>67.503035</td>
+      <td>14.6811</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>CPI</th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>RGDP</th>
+      <th>GDP_div_1000</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3.000000</td>
+      <td>3.000000</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>US</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>10228.933333</td>
+      <td>171.429333</td>
+      <td>2000.0</td>
+      <td>NaN</td>
+      <td>57.871093</td>
+      <td>10.228933</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>4356.573590</td>
+      <td>45.031773</td>
+      <td>10.0</td>
+      <td>NaN</td>
+      <td>10.390159</td>
+      <td>4.356574</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>5974.700000</td>
+      <td>127.500000</td>
+      <td>1990.0</td>
+      <td>NaN</td>
+      <td>46.860392</td>
+      <td>5.974700</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>8002.850000</td>
+      <td>148.400000</td>
+      <td>1995.0</td>
+      <td>NaN</td>
+      <td>53.055122</td>
+      <td>8.002850</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>10031.000000</td>
+      <td>169.300000</td>
+      <td>2000.0</td>
+      <td>NaN</td>
+      <td>59.249852</td>
+      <td>10.031000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>12356.050000</td>
+      <td>193.394000</td>
+      <td>2005.0</td>
+      <td>NaN</td>
+      <td>63.376443</td>
+      <td>12.356050</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>14681.100000</td>
+      <td>217.488000</td>
+      <td>2010.0</td>
+      <td>NaN</td>
+      <td>67.503035</td>
+      <td>14.681100</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p><strong>Exercise.</strong> Compute the summary statistics (for the pwt data frame). Write these summary stats to an excel sheet. Can you do this only for China?</p>
 </section>
@@ -1021,6 +2545,7 @@ Can you think of the execution results?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to a csv</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;gdp.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1028,6 +2553,7 @@ Can you think of the execution results?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to excel</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;gdp.xlsx&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
