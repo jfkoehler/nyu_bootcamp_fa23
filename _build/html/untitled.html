@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>NYU Data Bootcamp &#8212; Stern Data Bootcamp</title>
+    <title>KNearest Neighbors &#8212; Stern Data Bootcamp</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -61,7 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'untitled';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Untitled';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -74,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -127,9 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="syllabus.html">
+  
   
   
   
@@ -139,8 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Stern Data Bootcamp - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Stern Data Bootcamp - Home"/>`);</script>
   
   
 </a></div>
@@ -154,15 +168,110 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python_fundamentals_one.html">Python Fundamentals 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_fundamentals_two.html">Python Fundamentals 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro_to_numpy.html">Intro to numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro_to_pandas.html">Intro to pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pandas_II.html">Reading Files and Split Apply Combine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_to_plotting.html"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dates_intro_to_plotting.html">Reading Files and Split Apply Combine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plotting_seaborn.html">More plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="data_apis.html">Accessing Data with API’s</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="html_data.html">EDA Review and Extracting Data From HTML</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="folium_exs-clean.html">Making a Map</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="intro_to_git_and_github.html">Introduction to Git and your Terminal</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Predictive Modeling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="linear-regression-intro.html">Introduction to Linear Regression</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="practice_regression.html">Regression Part II</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="polynomial_models.html">Model Complexity and Evaluation</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="knn_classification.html">Introduction to Classification and K-Nearest Neighbors</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="logistic_starter_code.html">Classification II: Logistic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformers_pipelines_review.html">Transformers &amp; Preprocessing</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="cross_val_and_grid_searching.html">Learning Objectives</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="intro_decision_tree.html">Introduction to Decision Trees and Forests</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="advanced_models.html">Ensemble models</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="nlp-starter.html">NLP I: <code class="docutils literal notranslate"><span class="pre">CountVectorizer</span></code>, <code class="docutils literal notranslate"><span class="pre">TfidfVectorizer</span></code>, and Modeling</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="time_series_I.html">Time Series and Forecasting Intro</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="arima_models.html">Learning Objectives</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="intro_ann.html">Introduction to Artificial Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cnn_intro_pytorch_clean.html">Datasets and Convnets in <code class="docutils literal notranslate"><span class="pre">pytorch</span></code></a></li>
 </ul>
 
     </div>
@@ -209,6 +318,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jfkoehler/nyu_bootcamp_fa23/blob/master/Untitled.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -234,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jfkoehler/nyu_bootcamp_fa23/issues/new?title=Issue%20on%20page%20%2Funtitled.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jfkoehler/nyu_bootcamp_fa23/issues/new?title=Issue%20on%20page%20%2FUntitled.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -264,7 +404,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/untitled.md" target="_blank"
+      <li><a href="_sources/Untitled.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -274,7 +414,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -316,20 +456,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -346,7 +488,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>NYU Data Bootcamp</h1>
+    <h1>KNearest Neighbors</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -356,16 +498,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">NYU Data Bootcamp</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information">Information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sklearn">Using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardscaler"><code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code></a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project">Final Project</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
-</ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -376,185 +511,538 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="nyu-data-bootcamp">
-<h1>NYU Data Bootcamp<a class="headerlink" href="#nyu-data-bootcamp" title="Permalink to this heading">#</a></h1>
-<p>This is the Fall 2023 version of NYU’s Stern Data Bootcamp.</p>
-<section id="information">
-<h2>Information<a class="headerlink" href="#information" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Instructor</strong>: Jacob Koehler</p></li>
-<li><p><strong>Email</strong>: <a class="reference external" href="mailto:jfk11&#37;&#52;&#48;stern&#46;nyu&#46;edu">jfk11<span>&#64;</span>stern<span>&#46;</span>nyu<span>&#46;</span>edu</a></p></li>
-<li><p><strong>Slack Channel</strong>: <a class="reference external" href="https://join.slack.com/t/slack-y8n7409/shared_invite/zt-1fat2jrb6-DVnQzBVx8FwYzPbNudLU8w">https://join.slack.com/t/slack-y8n7409/shared_invite/zt-1fat2jrb6-DVnQzBVx8FwYzPbNudLU8w</a></p></li>
-<li><p><strong>Bootcamp Book</strong>: <a class="reference external" href="https://nyudatabootcamp.gitbook.io/thebook/">https://nyudatabootcamp.gitbook.io/thebook/</a></p></li>
-<li><p><strong>Github Repository</strong>: <a class="github reference external" href="https://github.com/jfkoehler/NYU-Bootcamp">jfkoehler/NYU-Bootcamp</a></p></li>
-<li><p><strong>Syllabus</strong>: <a class="reference external" href="https://docs.google.com/document/d/1BD8d7Qpxfmev5MY9VdEAtgOAeH9YO0vV/edit?usp=sharing&amp;ouid=115505102508269083833&amp;rtpof=true&amp;sd=true">Link</a></p></li>
-<li><p><strong>Teaching Assistant</strong>:  Lagan Sharma</p></li>
-<li><p><strong>Email</strong>:  <a class="reference external" href="mailto:ls5612&#37;&#52;&#48;nyu&#46;edu">ls5612<span>&#64;</span>nyu<span>&#46;</span>edu</a></p></li>
-<li><p><strong>Office Hours</strong>:  Thursdays 4pm - 5pm on Zoom</p></li>
-<li><p><strong>Zoom Link</strong>: <a class="reference external" href="https://NewSchool.zoom.us/j/98585813490">Office Hours Link</a></p></li>
-</ul>
-</section>
-</section>
-<section id="final-project">
-<h1>Final Project<a class="headerlink" href="#final-project" title="Permalink to this heading">#</a></h1>
-<p>*<em>Deliverable</em>:</p>
-<ul class="simple">
-<li><p>A well-made predictive model using either structured or unstructured machine learning techniques (or other technique approved in advanced), as well as clean, well-written code.</p></li>
-<li><p>A technical report aimed at fellow data scientists that explains your process and findings.</p></li>
-</ul>
-<section id="outline">
-<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">#</a></h2>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Class</p></th>
-<th class="head"><p>Topic</p></th>
-<th class="head"><p>In Class</p></th>
-<th class="head"><p>Homework</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>Installations and introduction to Python</p></td>
-<td><p><a class="reference external" href="https://nyudatabootcamp.gitbook.io/thebook/installing-python">Installations</a> , <span class="xref myst">Intro to Python</span></p></td>
-<td><p><a class="reference external" href="https://nyudatabootcamp.gitbook.io/thebook/py-fun1">Review Notes and Introduction in Book, Foundations I</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>Strings, Lists, Dictionaries, Tuples</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p><a class="reference external" href="https://nyudatabootcamp.gitbook.io/thebook/py-fun1#strings">Review Sections in Text and practice resources</a></p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>Conditionals, Loops, and Functions</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p><span class="xref myst">Homework I</span></p></td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>Introduction to NumPy</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p><a class="reference external" href="https://numpy.org/devdocs/user/absolute_beginners.html">Read through Section in Text and NumPy Tutorial</a></p></td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>Introduction to Pandas</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p><span class="xref myst">Homework II</span></p></td>
-</tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p>Pandas Part II</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><p>Intro to <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-odd"><td><p>8</p></td>
-<td><p>Plotting Part II</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-even"><td><p>9</p></td>
-<td><p>Introduction to API’s</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p><span class="xref myst">Homework IV</span></p></td>
-</tr>
-<tr class="row-odd"><td><p>10</p></td>
-<td><p>More with API’s and Visualization Review</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-even"><td><p>11</p></td>
-<td><p>Getting Data Off the Web – Webscraping</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-odd"><td><p>12</p></td>
-<td><p>Geographic Data Visualization</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-even"><td><p>13</p></td>
-<td><p>Probability Distributions – Continuous and Discrete</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-odd"><td><p>14</p></td>
-<td><p>Introduction to Linear Regression</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-even"><td><p>15</p></td>
-<td><p>Introduction to Linear Regression II</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-odd"><td><p>16</p></td>
-<td><p>Evaluating a Regression Model</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-even"><td><p>17</p></td>
-<td><p>Introduction to Classification</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-odd"><td><p>18</p></td>
-<td><p>Logistic Regression</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-even"><td><p>19</p></td>
-<td><p>Model Selection: Cross Validation and Grid Search</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-odd"><td><p>20</p></td>
-<td><p>Webscraping</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-even"><td><p>21</p></td>
-<td><p>Text as Data I</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-odd"><td><p>22</p></td>
-<td><p>Text as Data II</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-even"><td><p>23</p></td>
-<td><p>Tree Models</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-odd"><td><p>24</p></td>
-<td><p>Advanced Models and Intro to Neural Networks</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-even"><td><p>25</p></td>
-<td><p>Time Series Models</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-odd"><td><p>26</p></td>
-<td><p>Neural Networks II: Convolutional Architectures</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-even"><td><p>27</p></td>
-<td><p>Recurrent Networks and Transformer Models</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-odd"><td><p>28</p></td>
-<td><p>Deploying Models with Flask</p></td>
-<td><p><span class="xref myst">Notebook</span></p></td>
-<td><p>-</p></td>
-</tr>
-</tbody>
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000</td>
+      <td>6.155666</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.050505</td>
+      <td>3.685227</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.101010</td>
+      <td>0.668826</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.151515</td>
+      <td>0.410691</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.202020</td>
+      <td>9.582175</td>
+    </tr>
+  </tbody>
 </table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;new input&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8154f3d5ee5636389ba67c4101d3eb2757da76e0361538d27a767c7103a632d6.png" src="_images/8154f3d5ee5636389ba67c4101d3eb2757da76e0361538d27a767c7103a632d6.png" />
+</div>
+</div>
+<section id="knearest-neighbors">
+<h1>KNearest Neighbors<a class="headerlink" href="#knearest-neighbors" title="Permalink to this heading">#</a></h1>
+<p>Predict the average of the <span class="math notranslate nohighlight">\(k\)</span> nearest neighbors.  One way to think about “nearest” is euclidean distance.  We can determine the distance between each data point and the new data point at <span class="math notranslate nohighlight">\(x = 2\)</span> with <code class="docutils literal notranslate"><span class="pre">np.linalg.norm</span></code>.  This is a more general way of determining the euclidean distance between vectors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;distance from x = 2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;x&#39;</span><span class="p">]]</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>distance from x = 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000</td>
+      <td>6.155666</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.050505</td>
+      <td>3.685227</td>
+      <td>1.949495</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.101010</td>
+      <td>0.668826</td>
+      <td>1.898990</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.151515</td>
+      <td>0.410691</td>
+      <td>1.848485</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.202020</td>
+      <td>9.582175</td>
+      <td>1.797980</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;distance from x = 2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>distance from x = 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>40</th>
+      <td>2.020202</td>
+      <td>10.817300</td>
+      <td>0.020202</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>1.969697</td>
+      <td>14.057748</td>
+      <td>0.030303</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>2.070707</td>
+      <td>12.671513</td>
+      <td>0.070707</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>1.919192</td>
+      <td>6.862097</td>
+      <td>0.080808</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>2.121212</td>
+      <td>6.627326</td>
+      <td>0.121212</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;distance from x = 2&#39;</span><span class="p">)[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.20719679952342
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">10.207196799</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Prediction with 5 neighbors&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/627f32e5cd239dfa6e8d1491da18ccebbda135477f3a9dceb788700609a208d2.png" src="_images/627f32e5cd239dfa6e8d1491da18ccebbda135477f3a9dceb788700609a208d2.png" />
+</div>
+</div>
+<section id="using-sklearn">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code><a class="headerlink" href="#using-sklearn" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">KNeighborsRegressor</span></code> estimator can be used to build the KNN model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsRegressor()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">KNeighborsRegressor</label><div class="sk-toggleable__content"><pre>KNeighborsRegressor()</pre></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="s1">&#39;--r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;predictions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Predictions with $k = 5$&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1a6120e70e020dfdbcda874ff3089bc7da0d2c7dcb99fa23b2cf459300beaced.png" src="_images/1a6120e70e020dfdbcda874ff3089bc7da0d2c7dcb99fa23b2cf459300beaced.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="s1">&#39;--r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;predictions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Predictions with $k = 30$&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9c206be168ec333d7b1b2795c4a1f3984fae493782cdd5635e0ac142bad3111b.png" src="_images/9c206be168ec333d7b1b2795c4a1f3984fae493782cdd5635e0ac142bad3111b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">credit</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/Credit.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">credit</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Income</th>
+      <th>Limit</th>
+      <th>Rating</th>
+      <th>Cards</th>
+      <th>Age</th>
+      <th>Education</th>
+      <th>Gender</th>
+      <th>Student</th>
+      <th>Married</th>
+      <th>Ethnicity</th>
+      <th>Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>14.891</td>
+      <td>3606</td>
+      <td>283</td>
+      <td>2</td>
+      <td>34</td>
+      <td>11</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Caucasian</td>
+      <td>333</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>106.025</td>
+      <td>6645</td>
+      <td>483</td>
+      <td>3</td>
+      <td>82</td>
+      <td>15</td>
+      <td>Female</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Asian</td>
+      <td>903</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>104.593</td>
+      <td>7075</td>
+      <td>514</td>
+      <td>4</td>
+      <td>71</td>
+      <td>11</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Asian</td>
+      <td>580</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>148.924</td>
+      <td>9504</td>
+      <td>681</td>
+      <td>3</td>
+      <td>36</td>
+      <td>11</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Asian</td>
+      <td>964</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>55.882</td>
+      <td>4897</td>
+      <td>357</td>
+      <td>2</td>
+      <td>68</td>
+      <td>16</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Caucasian</td>
+      <td>331</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">credit</span><span class="p">[[</span><span class="s1">&#39;Income&#39;</span><span class="p">,</span> <span class="s1">&#39;Limit&#39;</span><span class="p">,</span> <span class="s1">&#39;Rating&#39;</span><span class="p">,</span> <span class="s1">&#39;Cards&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">credit</span><span class="p">[</span><span class="s1">&#39;Balance&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Income</th>
+      <th>Limit</th>
+      <th>Rating</th>
+      <th>Cards</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>14.891</td>
+      <td>3606</td>
+      <td>283</td>
+      <td>2</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>106.025</td>
+      <td>6645</td>
+      <td>483</td>
+      <td>3</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>104.593</td>
+      <td>7075</td>
+      <td>514</td>
+      <td>4</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>148.924</td>
+      <td>9504</td>
+      <td>681</td>
+      <td>3</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>55.882</td>
+      <td>4897</td>
+      <td>357</td>
+      <td>2</td>
+      <td>68</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Would a difference of 10 cards or 10 Rating points be more important?</p>
+</section>
+<section id="standardscaler">
+<h2><code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code><a class="headerlink" href="#standardscaler" title="Permalink to this heading">#</a></h2>
+<p>One approach to scaling the data is to</p>
+<p>credit = pd.read_csv(‘data/c</p>
 </section>
 </section>
 
@@ -583,16 +1071,12 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -607,16 +1091,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">NYU Data Bootcamp</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information">Information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sklearn">Using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardscaler"><code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code></a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project">Final Project</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
-</ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
@@ -637,6 +1114,7 @@ By Lenny
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -663,8 +1141,8 @@ By Lenny
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
